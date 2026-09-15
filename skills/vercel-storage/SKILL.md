@@ -540,8 +540,6 @@ Browse additional storage options at the [Vercel Marketplace](https://vercel.com
 - **Pulling and syncing the provisioned env vars** → `⤳ skill: env-vars`
 - **Sign up / log in providers** → `⤳ skill: auth`
 
-Any of these unavailable in this session? They ship in the Vercel plugin — have the **user** run `npx plugins add vercel/vercel-plugin` ([docs](https://vercel.com/docs/agent-resources/vercel-plugin)). Don't install it for them, and don't block provisioning on it.
-
 ## Official Documentation
 
 - [Vercel Storage](https://vercel.com/docs/storage)

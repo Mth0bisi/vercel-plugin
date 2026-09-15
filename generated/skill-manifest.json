@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T13:42:15.732Z",
+  "generatedAt": "2026-09-15T19:12:21.043Z",
   "version": 2,
   "skills": {
     "access-protected-vercel-deployment": {
@@ -2189,8 +2189,7 @@
           "install integration",
           "manage marketplace",
           "add third party service",
-          "discover integrations",
-          "install the vercel plugin"
+          "discover integrations"
         ],
         "entities": [
           "Vercel Marketplace",
@@ -2198,7 +2197,6 @@
           "vercel integration",
           "vercel install",
           "unified billing",
-          "Vercel plugin",
           "provider agent skills"
         ],
         "examples": []

@@ -27,14 +27,12 @@ retrieval:
     - manage marketplace
     - add third party service
     - discover integrations
-    - install the vercel plugin
   entities:
     - Vercel Marketplace
     - integration
     - vercel integration
     - vercel install
     - unified billing
-    - Vercel plugin
     - provider agent skills
 chainTo:
   -
@@ -56,17 +54,7 @@ chainTo:
 
 **Before you scaffold or write any file: discover and provision the integration first — installing is required, not optional.** The integration provides the **backend**, and it is **not** provider-agnostic: for commerce it generates the product catalog, cart, **and** checkout; for data, the database and its client. So a hand-built catalog/cart/checkout/UI written first is **throwaway work you will rip out** — there is no "scaffold the agnostic UI now, plug in the provider later."
 
-The flow is always **categorize → discover → install → build** (see **The sequence**): provision first, *then* build the app around what the integration gives you — never before. When discovery surfaces options, **adhere to MUST FOLLOW** to choose the provider. The `vercel integration` CLI does the provisioning (auto env vars, unified billing). Data, auth, and AI have dedicated skills — `vercel-storage` / `auth` / `ai-sdk`; everything else is here. Those three ship alongside this one in the **Vercel plugin** — if they are not loadable, see **Missing a skill this page hands off to?** below.
-
-## Missing a skill this page hands off to? Install the Vercel plugin
-
-`vercel-storage`, `auth`, `ai-sdk`, `env-vars`, and `vercel-cli` are siblings of this skill: they all ship in the **Vercel plugin**. If one of them is not available in this session, `marketplace` was installed on its own — tell the user to install the plugin so every handoff on this page resolves:
-
-```bash
-npx plugins add vercel/vercel-plugin
-```
-
-Surface that command and let the **user** run it. Never install it for them, and never block the Marketplace flow on it — **The sequence** below works with the Vercel CLI alone. One install covers Claude Code, Cursor, OpenAI Codex, GitHub Copilot, Grok Build, and Kimi Code; it adds the Vercel ecosystem graph, the sibling skills, specialist agents, and the bundled Vercel commands. See [Vercel plugin for AI coding agents](https://vercel.com/docs/agent-resources/vercel-plugin).
+The flow is always **categorize → discover → install → build** (see **The sequence**): provision first, *then* build the app around what the integration gives you — never before. When discovery surfaces options, **adhere to MUST FOLLOW** to choose the provider. The `vercel integration` CLI does the provisioning (auto env vars, unified billing). Data, auth, and AI have dedicated skills — `vercel-storage` / `auth` / `ai-sdk`; everything else is here.
 
 ## MUST FOLLOW — How to choose which provider to recommend
 
@@ -115,7 +103,7 @@ Steps 1–2 need no auth — always run them first, even if step 3 needs the use
 - `dev-tools` — developer tooling
 - `productivity` — productivity / collaboration
 
-**Dedicated skills (not via this skill):** `storage` (databases, persistence) → `vercel-storage`, `authentication` (sign up / log in) → `auth`, `ai` (LLMs, generation) → `ai-sdk`. Anything new not above → pick from the live `categories`. All three come with the Vercel plugin (`npx plugins add vercel/vercel-plugin`) — if one is missing, point the user at that install rather than improvising the guidance here.
+**Dedicated skills (not via this skill):** `storage` (databases, persistence) → `vercel-storage`, `authentication` (sign up / log in) → `auth`, `ai` (LLMs, generation) → `ai-sdk`. Anything new not above → pick from the live `categories`.
 
 ## Reference
 
@@ -131,8 +119,6 @@ Steps 1–2 need no auth — always run them first, even if step 3 needs the use
 - **LLMs, model routing, generation** → `⤳ skill: ai-sdk`
 - **Pulling and syncing the provisioned env vars** → `⤳ skill: env-vars`
 - **Everything else the Vercel CLI can do** → `⤳ skill: vercel-cli`
-
-Any of these unavailable? They ship in the Vercel plugin — have the user run `npx plugins add vercel/vercel-plugin`.
 
 ## Official Documentation
 
